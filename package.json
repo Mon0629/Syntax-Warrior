@@ -1,0 +1,17 @@
+{
+  "name": "syntax-warrior",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "main": "index.js",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix apps/frontend\" \"npm run dev --prefix apps/backend\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
