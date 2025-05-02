@@ -1,35 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import History from './pages/History'
+import Leaderboard from './pages/Leaderboard'
+import PlayerProfile from './pages/PlayerProfile'
+import Login from './pages/Login'
+import Register from './pages/CreateAccount'
+import SelectGameMode from './pages/SelectGameMode'
+import MultiplayerMode from './pages/MultiplayerMode'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="text-green-500">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Login/>}></Route>
+        <Route path='/home' element={<Home/>}></Route>
+        <Route path='/history' element={<History/>}></Route>
+        <Route path='/leaderboard' element={<Leaderboard/>}></Route>
+        <Route path='/player/:id' element={<PlayerProfile/>}></Route>
+        <Route path='/register' element={<Register/>}></Route>
+        <Route path='/select-game-mode' element={<SelectGameMode/>}></Route>
+        <Route path='/multiplayer-mode' element={<MultiplayerMode/>}></Route>
+      </Routes>
+    </BrowserRouter>
   )
+ 
 }
 
 export default App
