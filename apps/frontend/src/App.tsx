@@ -8,6 +8,7 @@ import Login from './pages/Login'
 import Register from './pages/CreateAccount'
 import SelectGameMode from './pages/SelectGameMode'
 import MultiplayerMode from './pages/MultiplayerMode'
+import LandingPage from './pages/LandingPage'
 import './App.css'
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Login/>}></Route>
+        <Route path='/' element={<LandingPage/>}></Route>
+        <Route path='/login' element={<Login/>}></Route>
         <Route path='/home' element={<Home/>}></Route>
         <Route path='/history' element={<History/>}></Route>
         <Route path='/leaderboard' element={<Leaderboard/>}></Route>
